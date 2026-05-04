@@ -1,0 +1,124 @@
+{
+  "splashtails": {
+    "name": "Splashtails",
+    "order": 0,
+    "variants": [
+      { "name": "Ruby", "limit": 50, "index": 0 },
+      { "name": "Sunny", "limit": 50, "index": 1 },
+      { "name": "Indigo", "limit": 50, "index": 2 },
+      { "name": "Umber", "limit": 10, "index": 3 },
+      { "name": "Seafoam", "limit": 50, "index": 4 }
+    ]
+  },
+  "plentifins": {
+    "name": "Plentifins",
+    "order": 1,
+    "variants": [
+      { "name": "Olive", "limit": 50, "index": 0 },
+      { "name": "Amber", "limit": 50, "index": 1 },
+      { "name": "Cloudy", "limit": 50, "index": 2 },
+      { "name": "Bonedust", "limit": 10, "index": 3 },
+      { "name": "Watery", "limit": 50, "index": 4 }
+    ]
+  },
+  "ancientscales": {
+    "name": "Ancientscales",
+    "order": 2,
+    "variants": [
+      { "name": "Almond", "limit": 50, "index": 0 },
+      { "name": "Sapphire", "limit": 50, "index": 1 },
+      { "name": "Smoke", "limit": 50, "index": 2 },
+      { "name": "Bone", "limit": 10, "index": 3 },
+      { "name": "Starshine", "limit": 50, "index": 4 }
+    ]
+  },
+  "wildsplashes": {
+    "name": "Wildsplashes",
+    "order": 3,
+    "variants": [
+      { "name": "Russet", "limit": 50, "index": 0 },
+      { "name": "Sandy", "limit": 50, "index": 1 },
+      { "name": "Ocean", "limit": 50, "index": 2 },
+      { "name": "Muddy", "limit": 10, "index": 3 },
+      { "name": "Coral", "limit": 50, "index": 4 }
+    ]
+  },
+  "devilfishes": {
+    "name": "Devilfishes",
+    "order": 4,
+    "variants": [
+      { "name": "Ashen", "limit": 50, "index": 0 },
+      { "name": "Seashell", "limit": 50, "index": 1 },
+      { "name": "Lava", "limit": 50, "index": 2 },
+      { "name": "Forsaken", "limit": 10, "index": 3 },
+      { "name": "Firelight", "limit": 50, "index": 4 }
+    ]
+  },
+  "islehoppers": {
+    "name": "Islehoppers",
+    "order": 5,
+    "variants": [
+      { "name": "Stone", "limit": 50, "index": 0 },
+      { "name": "Moss", "limit": 50, "index": 1 },
+      { "name": "Raven", "limit": 10, "index": 2 },
+      { "name": "Honey", "limit": 50, "index": 3 },
+      { "name": "Amethyst", "limit": 50, "index": 4 }
+    ]
+  },
+  "pondies": {
+    "name": "Pondies",
+    "order": 6,
+    "variants": [
+      { "name": "Charcoal", "limit": 50, "index": 0 },
+      { "name": "Orchid", "limit": 50, "index": 1 },
+      { "name": "Bronze", "limit": 50, "index": 2 },
+      { "name": "Bright", "limit": 10, "index": 3 },
+      { "name": "Moonsky", "limit": 50, "index": 4 }
+    ]
+  },
+  "battlegills": {
+    "name": "Battlegills",
+    "order": 7,
+    "variants": [
+      { "name": "Jade", "limit": 50, "index": 0 },
+      { "name": "Sky", "limit": 50, "index": 1 },
+      { "name": "Rum", "limit": 50, "index": 2 },
+      { "name": "Sand", "limit": 10, "index": 3 },
+      { "name": "Bittersweet", "limit": 50, "index": 4 }
+    ]
+  },
+  "stormfishes": {
+    "name": "Stormfishes",
+    "order": 8,
+    "variants": [
+      { "name": "Ancient", "limit": 50, "index": 0 },
+      { "name": "Shores", "limit": 50, "index": 1 },
+      { "name": "Wild", "limit": 50, "index": 2 },
+      { "name": "Shadow", "limit": 10, "index": 3 },
+      { "name": "Twilight", "limit": 50, "index": 4 }
+    ]
+  },
+  "wreckers": {
+    "name": "Wreckers",
+    "order": 9,
+    "variants": [
+      { "name": "Rose", "limit": 50, "index": 0 },
+      { "name": "Blackcloud", "limit": 50, "index": 1 },
+      { "name": "Snow", "limit": 10, "index": 2 },
+      { "name": "Sun", "limit": 50, "index": 3 },
+      { "name": "Moon", "limit": 50, "index": 4 }
+    ]
+  },
+  "cooking": {
+    "name": "Cooking",
+    "order": 10,
+    "variants": [
+      { "name": "Chicken", "limit": 50, "index": 0 },
+      { "name": "Pork", "limit": 50, "index": 1 },
+      { "name": "Snake", "limit": 50, "index": 2 },
+      { "name": "Shark", "limit": 50, "index": 3 },
+      { "name": "Megalodon", "limit": 50, "index": 4 },
+      { "name": "Kraken", "limit": 50, "index": 5 }
+    ]
+  }
+}
