@@ -1,0 +1,25 @@
+---
+
+name: sea-of-fishing
+services:
+  database:
+    image: postgres:18-alpine
+    container_name: sea-of-fishing-db
+    volumes:
+      - sea-of-fishing-data:/var/lib/postgresql/18/docker:rw
+    environment:
+      POSTGRES_DB: sof_db
+      POSTGRES_USER: sof_db_user
+      POSTGRES_PASSWORD: sof_db_password
+    restart: always
+    healthcheck:
+      test: pg_isready
+      interval: 5s
+      timeout: 1s
+      retries: 5
+    ports:
+      - "5432:5432/tcp"
+volumes:
+  sea-of-fishing-data: {}
+
+# vim: ft=yaml sw=2
