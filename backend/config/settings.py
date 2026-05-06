@@ -56,6 +56,7 @@ INSTALLED_APPS = [
 
     # Project
     "fish",
+    "pirate",
     "user",
 ]
 

@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=20)),
                 ('limit', models.PositiveSmallIntegerField()),
                 ('sot_index', models.PositiveSmallIntegerField()),
-                ('fish', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='fish.fish')),
+                ('fish', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='variant_manager', to='fish.fish')),
             ],
             options={
                 'unique_together': {('fish', 'sot_index')},
