@@ -5,6 +5,9 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {App} from "./App.tsx";
 import {Loading} from "./components/Loading.tsx";
+import {createBrowserRouter, RouterProvider} from "react-router";
+import {FrontPage} from "./pages/FrontPage.tsx";
+import {NotFound} from "./pages/NotFoundPage.tsx";
 
 const rootElement = document.getElementById("root");
 
@@ -17,6 +20,24 @@ const queryClient = new QueryClient({
     },
 });
 
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <App/>,
+        children: [
+            {
+                index: true,
+                element: <FrontPage/>,
+            },
+            // TODO: Add child paths here
+            {
+                path: "*",
+                element: <NotFound/>,
+            },
+        ],
+    },
+]);
+
 if (rootElement) {
     const root = createRoot(rootElement);
 
@@ -24,7 +45,7 @@ if (rootElement) {
         <React.StrictMode>
             <React.Suspense fallback={<Loading fullPage={true}/>}>
                 <QueryClientProvider client={queryClient}>
-                    <App/>
+                    <RouterProvider router={router}/>
                 </QueryClientProvider>
             </React.Suspense>
         </React.StrictMode>
