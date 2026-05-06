@@ -1,0 +1,37 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to Docker Registry
+        uses: docker/login-action@v4
+        with:
+          registry: ${{ vars.REGISTRY_HOST }}
+          username: ${{ vars.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v4
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v4
+      - name: Build and Push Backend
+        uses: docker/build-push-action@v7
+        with:
+          push: true
+          context: backend
+          tags: ${{ vars.REGISTRY_HOST }}/${{ github.event.repository.name }}-backend:latest
+          platforms: amd64,arm64
+      - name: Build and Push Frontend
+        uses: docker/build-push-action@v7
+        with:
+          push: true
+          context: frontend
+          tags: ${{ vars.REGISTRY_HOST }}/${{ github.event.repository.name }}-frontend:latest
+          platforms: amd64,arm64
+      - name: Notify Watchtower
+        run: |
+          curl -fsSL -H "${{ secrets.WATCHTOWER_AUTH_HEADER }}" -X "POST" https://${{ vars.WATCHTOWER_HOST }}/watchtower/v1/update
