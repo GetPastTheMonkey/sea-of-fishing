@@ -32,7 +32,7 @@ export const App: React.FunctionComponent = () => {
   };
 
   return <>
-    <FishContext value={{fishes: data ?? []}}>
+    <FishContext value={data ?? []}>
       <header className="container">
         <img src="https://placehold.co/1200x200" alt="Logo" className="w-100"/>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">

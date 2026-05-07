@@ -6,6 +6,7 @@ import {ApiClient} from "../api/ApiClient.ts";
 import {Loading} from "../components/Loading.tsx";
 import {ErrorAlert} from "../components/error/ErrorAlert.tsx";
 import {PirateNotFound} from "../components/pirate/PirateNotFound.tsx";
+import {PirateFound} from "../components/pirate/PirateFound.tsx";
 
 type PiratePageParams = {
     pirate: string,
@@ -44,7 +45,7 @@ export const PiratePage: React.FunctionComponent = () => {
     }
 
     if (data) {
-        return <pre>{JSON.stringify(data, null, 4)}</pre>
+        return <PirateFound pirate={data}/>
     }
 
     console.assert(false, isFetching, data, error);
