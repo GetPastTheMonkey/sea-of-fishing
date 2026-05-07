@@ -35,6 +35,7 @@ DEBUG = not PRODUCTION or os.getenv("DJANGO_DEBUG", "").lower() == "true"
 ALLOWED_HOSTS = [
     "fishing.gruebel.dev",
     "localhost",
+    "127.0.0.1",
 ]
 
 ##################################################
