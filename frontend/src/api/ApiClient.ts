@@ -1,5 +1,5 @@
 import {GenericApiClient} from "@getpastthemonkey/generic-api-client";
-import type {FishDTO, PirateDTO, PirateRegistrationDTO} from "./DTO.ts";
+import type {FishDTO, PirateDTO, PirateRegistrationDTO, RankingDTO} from "./DTO.ts";
 import {BACKEND_URL} from "../config.ts";
 
 export class ApiClient extends GenericApiClient {
@@ -23,6 +23,13 @@ export class ApiClient extends GenericApiClient {
     public static getPirateByName(name: string): Promise<PirateDTO> {
         return this.get<null, PirateDTO>(
             "pirates/by-name/" + name,
+            null
+        );
+    }
+
+    public static getPirateRanking(): Promise<RankingDTO[]> {
+        return this.get<null, RankingDTO[]>(
+            "pirates/ranking",
             null
         );
     }

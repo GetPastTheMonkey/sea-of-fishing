@@ -1,3 +1,5 @@
+from django.db.models.aggregates import Sum
+from django.db.models.functions import Coalesce
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.exceptions import NotFound
 from rest_framework.permissions import AllowAny
@@ -30,3 +32,16 @@ def get_pirate_by_name(request, name):
         raise NotFound(f"Pirate {name} does not exist")
 
     return pirate_response(pirate)
+
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def get_ranking(request):
+    pirates = (
+        Pirate.objects
+        .annotate(score=Coalesce(Sum("progress_manager__sold"), 0))
+        .order_by("-score")
+        .values("name", "slug", "score")
+    )
+
+    return Response(pirates)

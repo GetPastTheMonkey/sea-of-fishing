@@ -23,3 +23,9 @@ export interface PirateRegistrationDTO {
     readonly name: string;
     readonly sot_rat: string;
 }
+
+export interface RankingDTO {
+    readonly name: string;
+    readonly slug: string;
+    readonly score: number;
+}
