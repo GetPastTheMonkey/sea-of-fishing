@@ -14,9 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.http import HttpResponse
 from django.urls import path, include
 
 urlpatterns = [
     path("fishes/", include("fish.urls")),
     path("pirates/", include("pirate.urls")),
+    path("healthcheck", lambda _: HttpResponse()),
 ]
