@@ -17,7 +17,7 @@ COPY . .
 
 # Apply missing database migrations and serve application
 EXPOSE 80
-CMD ["/bin/sh", "-c", "python manage.py migrate;python manage.py runserver 80"]
+CMD ["/bin/sh", "-c", "python manage.py migrate;python manage.py runserver 0.0.0.0:80"]
 
 # Define healthcheck
 HEALTHCHECK --interval=5s --timeout=1s --retries=10 \
