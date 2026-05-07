@@ -5,9 +5,10 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {App} from "./App.tsx";
 import {Loading} from "./components/Loading.tsx";
-import {createBrowserRouter, RouterProvider} from "react-router";
+import {createBrowserRouter, Navigate, RouterProvider} from "react-router";
 import {FrontPage} from "./pages/FrontPage.tsx";
 import {NotFound} from "./pages/NotFoundPage.tsx";
+import {PiratePage} from "./pages/PiratePage.tsx";
 
 const rootElement = document.getElementById("root");
 
@@ -29,7 +30,19 @@ const router = createBrowserRouter([
                 index: true,
                 element: <FrontPage/>,
             },
-            // TODO: Add child paths here
+            {
+                path: "pirate",
+                children: [
+                    {
+                        index: true,
+                        element: <Navigate to=".."/>,
+                    },
+                    {
+                        path: ":pirate",
+                        element: <PiratePage/>,
+                    },
+                ],
+            },
             {
                 path: "*",
                 element: <NotFound/>,

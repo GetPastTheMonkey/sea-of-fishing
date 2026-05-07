@@ -4,9 +4,13 @@ import {ApiClient} from "./api/ApiClient.ts";
 import {Loading} from "./components/Loading.tsx";
 import {ErrorPage} from "./components/error/ErrorPage.tsx";
 import {FishContext} from "./context/FishContext.ts";
-import {NavLink, Outlet} from "react-router";
+import {NavLink, Outlet, useNavigate} from "react-router";
 
 export const App: React.FunctionComponent = () => {
+  const [lookup, setLookup] = React.useState<string>("");
+
+  const navigate = useNavigate();
+
   const {isFetching, data, error} = useQuery({
     queryKey: ["getFishes"],
     queryFn: () => ApiClient.getFishes(),
@@ -21,6 +25,11 @@ export const App: React.FunctionComponent = () => {
   if (error) {
     return <ErrorPage error={error}/>
   }
+
+  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    navigate("/pirate/" + lookup);
+  };
 
   return <>
     <FishContext value={{fishes: data ?? []}}>
@@ -47,6 +56,18 @@ export const App: React.FunctionComponent = () => {
                 </li>
               </ul>
             </div>
+
+            <form className="d-flex" role="search" onSubmit={handleSubmit}>
+              <input
+                  className="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  defaultValue={lookup}
+                  onChange={(e) => setLookup(e.target.value)}
+              />
+              <button className="btn btn-outline-primary" type="submit">Search</button>
+            </form>
           </div>
         </nav>
       </header>
