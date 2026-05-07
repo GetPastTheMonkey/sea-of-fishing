@@ -10,6 +10,7 @@ import {FrontPage} from "./pages/FrontPage.tsx";
 import {NotFound} from "./pages/NotFoundPage.tsx";
 import {PiratePage} from "./pages/PiratePage.tsx";
 import {RegisterPage} from "./pages/RegisterPage.tsx";
+import {RankingPage} from "./pages/RankingPage.tsx";
 
 const rootElement = document.getElementById("root");
 
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
                         element: <PiratePage/>,
                     },
                 ],
+            },
+            {
+                path: "ranking",
+                element: <RankingPage/>,
             },
             {
                 path: "register",

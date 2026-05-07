@@ -24,7 +24,6 @@ export const PiratePage: React.FunctionComponent = () => {
 
     if (isFetching) {
         return <>
-            <h1>Pirate Lookup</h1>
             <Loading/>
         </>
     }
