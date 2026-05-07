@@ -9,6 +9,7 @@ import {createBrowserRouter, Navigate, RouterProvider} from "react-router";
 import {FrontPage} from "./pages/FrontPage.tsx";
 import {NotFound} from "./pages/NotFoundPage.tsx";
 import {PiratePage} from "./pages/PiratePage.tsx";
+import {RegisterPage} from "./pages/RegisterPage.tsx";
 
 const rootElement = document.getElementById("root");
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
                         element: <PiratePage/>,
                     },
                 ],
+            },
+            {
+                path: "register",
+                element: <RegisterPage/>,
             },
             {
                 path: "*",

@@ -1,7 +1,7 @@
 import uuid
 
 from django.db import models
-from django.db.models import Sum, Value
+from django.db.models import Sum, Value, Q
 from django.db.models.functions import Coalesce
 
 from fish.models import FishVariant
